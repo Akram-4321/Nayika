@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "690475210724",
+    "project_id": "nayika-fbd22",
+    "storage_bucket": "nayika-fbd22.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690475210724:android:f22b8a98f8da0c917619f1",
+        "android_client_info": {
+          "package_name": "com.example.nayika"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "690475210724-gqbqnio433n8sl7166djb6t1rghj7u7g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdo4uUO2Rye90LNK9_yakgHdwr93GMBkk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "690475210724-gqbqnio433n8sl7166djb6t1rghj7u7g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
