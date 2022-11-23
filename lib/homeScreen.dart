@@ -1,6 +1,7 @@
 //import 'dart:html';
 import 'dart:math';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
 import 'package:nayika/widgets/home_widgets/DrawerScreen.dart';
@@ -33,18 +34,29 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
   }
 
- 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
- appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 169, 37, 235),
-        title: Text(
-          "Nayika",
-        ),
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 233, 172, 230),
+       actions: [IconButton(onPressed: () {
+         final player = AudioPlayer();
+            player.play(AssetSource('audio.mp3'));
+            Duration(seconds: 2);
+       },
+       icon: Padding(
+         padding: const EdgeInsets.only(right: 2),
+         child: Image.asset('assets/alert1.png'),
+       ),
+       ),
+       ],
+      flexibleSpace: Padding(
+        padding: const EdgeInsets.only(top: 30, right: 100),
+        child: Image.asset('assets/nayikaIcon.png',),
       ),
-      drawer: DrawerScreen(),
+      
+      ),
+       drawer: DrawerScreen(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -86,9 +98,5 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
     );
-     
   }
 }
-
-
-

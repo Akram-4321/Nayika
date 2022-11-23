@@ -42,7 +42,7 @@ class ArmyEmergency extends StatelessWidget {
                   CircleAvatar(
                     radius: 25,
                     backgroundColor: Colors.white.withOpacity(0.5),
-                    child: Image.asset('assets/women1.png'),
+                    child: Image.asset('assets/nayika1.png'),
                   ),
                   Expanded(
                     child: Column(
