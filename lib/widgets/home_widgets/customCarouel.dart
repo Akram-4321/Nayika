@@ -47,13 +47,19 @@ class CustomCarouel extends StatelessWidget {
                       context,
                       SafeWebView(
                           url:
+                              "https://www.indiatimes.com/trending/social-relevance/government-schemes-for-women-empowerment-534032.html"));
+                } else if (index == 3) {
+                  navigateToRoute(
+                      context,
+                      SafeWebView(
+                          url:
                               "https://www.healthline.com/health/womens-health/self-defense-tips-escape"));
                 } else {
                   navigateToRoute(
                       context,
                       SafeWebView(
                           url:
-                              "https://www.healthline.com/health/womens-health/self-defense-tips-escape"));
+                              "https://www.indiatoday.in/education-today/gk-current-affairs/story/11-women-rights-india-312263-2016-03-08"));
                 }
                     },
                     child: Container(

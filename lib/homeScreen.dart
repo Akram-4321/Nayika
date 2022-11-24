@@ -4,7 +4,7 @@ import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 
-import 'package:nayika/widgets/home_widgets/DrawerScreen.dart';
+//import 'package:nayika/widgets/home_widgets/DrawerScreen.dart';
 
 import 'package:nayika/widgets/home_widgets/customCarouel.dart';
 import 'package:nayika/widgets/home_widgets/custom_appBar.dart';
@@ -18,6 +18,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final player = AudioPlayer();
+  bool isPlaying = false;
   // const HomeScreen({super.key});
   int qIndex = 0;
 
@@ -32,31 +34,44 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     getRandomQuote();
     super.initState();
+
+    player.onPlayerStateChanged.listen((State) {
+      setState(() {
+        isPlaying = State == PlayerState.playing;
+      });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 233, 172, 230),
-       actions: [IconButton(onPressed: () {
-         final player = AudioPlayer();
-            player.play(AssetSource('audio.mp3'));
-            Duration(seconds: 2);
-       },
-       icon: Padding(
-         padding: const EdgeInsets.only(right: 2),
-         child: Image.asset('assets/alert1.png'),
-       ),
-       ),
-       ],
-      flexibleSpace: Padding(
-        padding: const EdgeInsets.only(top: 30, right: 100),
-        child: Image.asset('assets/nayikaIcon.png',),
+        actions: [
+          IconButton(
+            onPressed: () async {
+              if (isPlaying) {
+                await player.pause();
+              } else {
+                // final player = AudioPlayer();
+               await player.play(AssetSource('Siren.mp3'));
+              }
+            },
+            icon: Padding(
+              padding: const EdgeInsets.only(right: 1),
+              child: Image.asset('assets/alert1.png'),
+            ),
+          ),
+        ],
+        flexibleSpace: Padding(
+          padding: const EdgeInsets.only(top: 30, right: 160),
+          child: Image.asset(
+            'assets/nayikaIcon.png',
+          ),
+        ),
       ),
-      
-      ),
-       drawer: DrawerScreen(),
+      // drawer: DrawerScreen(),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
