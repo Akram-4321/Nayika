@@ -54,13 +54,20 @@ class CustomCarouel extends StatelessWidget {
                       SafeWebView(
                           url:
                               "https://www.healthline.com/health/womens-health/self-defense-tips-escape"));
-                } else {
+                } else if (index == 4){
                   navigateToRoute(
                       context,
                       SafeWebView(
                           url:
                               "https://www.indiatoday.in/education-today/gk-current-affairs/story/11-women-rights-india-312263-2016-03-08"));
+                } else {
+                  navigateToRoute(
+                      context,
+                      SafeWebView(
+                          url:
+                              "https://www.thebetterindia.com/143044/lesser-known-unique-handicrafts-handlooms-india-villages/"));
                 }
+
                     },
                     child: Container(
                       decoration: BoxDecoration(
